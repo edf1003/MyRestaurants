@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "La Esquina Sabrosa",
+    "category": "Mexicana",
+    "location": "Av. Insurgentes 123, Ciudad de México",
+    "image": "/assets/images/la-esquina-sabrosa.jpg",
+    "description": "Auténtica comida mexicana con un toque moderno. Famosos por sus tacos al pastor.",
+    "priceRange": "$$",
+    "rating": 4.8,
+    "hours": "10:00 AM - 10:00 PM"
+  },
+  {
+    "id": "2",
+    "name": "Sushi Paradise",
+    "category": "Japonesa",
+    "location": "Calle Tokyo 456, Monterrey",
+    "image": "/assets/images/sushi-paradise.jpg",
+    "description": "Un rincón japonés que ofrece sushi fresco y platos tradicionales de alta calidad.",
+    "priceRange": "$$$",
+    "rating": 4.5,
+    "hours": "12:00 PM - 11:00 PM"
+  },
+  {
+    "id": "3",
+    "name": "Pasta Bella",
+    "category": "Italiana",
+    "location": "Paseo Italia 789, Guadalajara",
+    "image": "/assets/images/pasta-bella.jpg",
+    "description": "Pasta hecha a mano y recetas italianas auténticas en un ambiente acogedor.",
+    "priceRange": "$$",
+    "rating": 4.7,
+    "hours": "11:00 AM - 9:30 PM"
+  },
+  {
+    "id": "4",
+    "name": "Burger Town",
+    "category": "Americana",
+    "location": "Boulevard Estados Unidos 101, Tijuana",
+    "image": "/assets/images/burger-town.jpg",
+    "description": "Las hamburguesas más jugosas y creativas, acompañadas de papas fritas crujientes.",
+    "priceRange": "$",
+    "rating": 4.3,
+    "hours": "10:30 AM - 11:00 PM"
+  },
+  {
+    "id": "5",
+    "name": "El Asador Gaucho",
+    "category": "Argentina",
+    "location": "Calle de la Parrilla 234, Buenos Aires",
+    "image": "/assets/images/el-asador-gaucho.jpg",
+    "description": "Cortes de carne argentinos preparados a la parrilla con técnicas tradicionales.",
+    "priceRange": "$$$",
+    "rating": 4.9,
+    "hours": "1:00 PM - 11:00 PM"
+  },
+  {
+    "id": "6",
+    "name": "Veggie Delight",
+    "category": "Vegana",
+    "location": "Calle Saludable 567, Mérida",
+    "image": "/assets/images/veggie-delight.jpg",
+    "description": "Platillos veganos que combinan creatividad y sabor, hechos con ingredientes frescos.",
+    "priceRange": "$$",
+    "rating": 4.6,
+    "hours": "9:00 AM - 8:00 PM"
+  },
+  {
+    "id": "7",
+    "name": "Café Artístico",
+    "category": "Cafetería",
+    "location": "Calle Pintores 678, Oaxaca",
+    "image": "/assets/images/cafe-artistico.jpg",
+    "description": "Un café que combina arte y sabor, ideal para relajarse y disfrutar de un buen libro.",
+    "priceRange": "$",
+    "rating": 4.2,
+    "hours": "8:00 AM - 7:00 PM"
+  },
+  {
+    "id": "8",
+    "name": "Mariscos del Pacífico",
+    "category": "Mariscos",
+    "location": "Playa Dorada 321, Acapulco",
+    "image": "/assets/images/mariscos-del-pacifico.jpg",
+    "description": "Delicias del mar servidas frescas y con sabores únicos que transportan al océano.",
+    "priceRange": "$$",
+    "rating": 4.4,
+    "hours": "11:00 AM - 10:00 PM"
+  }
+]
