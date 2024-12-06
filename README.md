@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Directorio de Restaurantes Favoritos 🍽️
 
-## Getting Started
+Este es un proyecto inicial de **Next.js** para aprender sobre la estructura de un sitio web, manejo de rutas estáticas y dinámicas, y la implementación de componentes. El objetivo principal es crear una página donde los usuarios puedan explorar una lista de restaurantes favoritos, con detalles básicos de cada uno.
 
-First, run the development server:
+## Características ✨
+
+### 🚀 Funcionalidades
+
+- **Página de Inicio**:
+  - Muestra una lista de tarjetas con el nombre, categoría, ubicación, imagen y puntuación de cada restaurante.
+  - Diseño **responsive** y estilo atractivo utilizando tecnologías como **CSS Modules** o **TailwindCSS**.
+  
+- **Página de Detalle del Restaurante**:
+  - Detalles extendidos de cada restaurante seleccionado.
+  - Generación dinámica de páginas usando rutas estáticas con **getStaticProps** y **getStaticPaths**.
+  
+- **Barra de Búsqueda y Filtros (opcional)**:
+  - Permite buscar restaurantes por nombre o categoría para facilitar la navegación.
+
+### 🔧 Tecnologías Utilizadas
+
+- **Next.js**: Para la creación del sitio web y la gestión de rutas estáticas y dinámicas.
+- **React**: Librería principal para el manejo de la interfaz.
+- **TailwindCSS / CSS Modules**: Para el diseño moderno y responsivo.
+- **JavaScript/TypeScript**: Para la lógica y gestión de datos.
+- **Node.js**: Para el entorno de ejecución y la creación del servidor.
+
+##  Instalación 🚀
+
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/directorio-restaurantes-favoritos.git
+```
+
+### Dependencias
+
+```bash
+npm install
+```
+
+### Ejecutar 
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Recursos 📚
+  - Next.js Documentation
+  - TailwindCSS Documentation
+  - React Documentation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
