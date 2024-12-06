@@ -1,35 +1,58 @@
 'use client';
 import RestaurantCard from './components/restaurant-card';
-import { Restaurant } from './models/models';
-import restaurantsData from './../resources/data/restaurants.json';
 import './globals.css';
 import { FaSearch } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import AddRestaurantModal from './modals/add-restaurant-modal';
+import axios from 'axios';
+import { Restaurant } from './models/models';
 
 export default function Home() {
-  const restaurants = restaurantsData.map(
-    (data) =>
-      new Restaurant(
-        data.id,
-        data.name,
-        data.category,
-        data.location,
-        data.image,
-        data.description,
-        data.priceRange,
-        data.rating,
-        data.hours
-      )
-  );
-
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>(
+    []
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const fetchRestaurants = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/restaurants');
+      setRestaurants(response.data);
+      setFilteredRestaurants(response.data);
+    } catch (error) {
+      console.error('Error al obtener restaurantes:', error);
+    }
+  };
+
+  const handleDeleteRestaurant = async (id: string, filename: string) => {
+    try {
+      await fetch(`http://localhost:3000/restaurants/${id}`, {
+        method: 'DELETE',
+      });
+      await fetch(`http://localhost:3001/images/${filename}`, {
+        method: 'DELETE',
+      });
+      fetchRestaurants();
+    } catch (error) {
+      console.error('Error al eliminar el restaurante:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRestaurants();
+  }, []);
 
   const filter = () => {
     const filtered = restaurants.filter((restaurant) =>
       restaurant.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredRestaurants(filtered);
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+    fetchRestaurants();
   };
 
   return (
@@ -52,25 +75,29 @@ export default function Home() {
         >
           <FaSearch />
         </button>
-        <button className='bg-green-800 text-white p-2 rounded h-10 ml-auto'>
-          Nuevo
-        </button>
+        <div>
+          <button
+            className='bg-green-800 text-white p-2 rounded h-10 ml-auto'
+            onClick={toggleModal}
+          >
+            Nuevo
+          </button>
+          <AddRestaurantModal
+            isOpen={isModalOpen}
+            onClose={toggleModal}
+            restaurants={restaurants}
+          />
+        </div>
       </div>
 
-      <div>
-        {filteredRestaurants
-          .reduce<Restaurant[][]>((rows, restaurant, index) => {
-            if (index % 3 === 0) rows.push([]);
-            rows[rows.length - 1].push(restaurant);
-            return rows;
-          }, [])
-          .map((row, index) => (
-            <div key={index} className='flex flex-wrap gap-4 mx-4'>
-              {row.map((restaurant) => (
-                <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-              ))}
-            </div>
-          ))}
+      <div className='mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-4'>
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+            onDelete={handleDeleteRestaurant}
+          />
+        ))}
       </div>
     </div>
   );
